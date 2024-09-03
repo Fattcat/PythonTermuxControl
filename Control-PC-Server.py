@@ -22,9 +22,13 @@ def start_server():
 
             print(f"Prijatý príkaz: {data}")
 
-            # Ak je prijatý príkaz 'press win', stlačíme Windows klávesu
+            # Príkaz 'press win' stlačí Windows klávesu
             if data.strip().lower() == 'press win':
                 pyautogui.hotkey('winleft')
+            
+            # Príkaz 'press alt+tab' stlačí Alt a Tab súčasne
+            elif data.strip().lower() == 'press alt+tab':
+                pyautogui.hotkey('alt', 'tab')
 
         conn.close()
         print(f"Klient {addr} sa odpojil")
